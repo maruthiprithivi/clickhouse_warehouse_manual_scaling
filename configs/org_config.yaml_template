@@ -1,0 +1,35 @@
+# Example
+# services:
+#   service1:
+#     service_name: "Scale Service 01"
+#     service_id: "65444asdasdas-asdafas15154asd-asdasd7875"
+#     username: "user1"
+#     password: "User1ShallPass"
+#   service2:
+#     service_name: "Scale Service 02"
+#     service_id: "098qwnjkdfsdf-mytmxfsadfjk391-54jkwsejrk"
+#     username: "user2"
+#     password: "User2ShallPass"
+#   serviceX:
+#     service_name: "Scale Service 0X"
+#     service_id: "xxxxxxxxxx-xxxxxxxxxxxxxxxx-xxxxxxxxxxxx"
+#     username: "X"
+#     password: "UserXShallPass"
+
+services:
+  service1:
+    service_name: "<Give a name for the service as an identifier>"
+    service_id: "<SERVICE_ID_1>"
+    username: "<USERNAME_1>"
+    password: "<PASSWORD_1>"
+  service2:
+    service_name: "<Give a name for the service as an identifier>"
+    service_id: "<SERVICE_ID_2>"
+    username: "<USERNAME_2>"
+    password: "<PASSWORD_2>"
+  service3:
+    service_name: "<Give a name for the service as an identifier>"
+    service_id: "<SERVICE_ID_3>"
+    username: "<USERNAME_3>"
+    password: "<PASSWORD_3>"
+# Add more users as needed

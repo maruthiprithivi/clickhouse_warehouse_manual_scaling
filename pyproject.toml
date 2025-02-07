@@ -1,0 +1,67 @@
+[project]
+name = "ch-warehouse-manual-scaling"
+version = "0.1.0"
+description = "ClickHouse Warehouse Manual Scaling Service"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.115.8",
+    "python-dotenv>=1.0.1",
+    "pyyaml>=6.0.2",
+    "requests>=2.32.3",
+    "uvicorn>=0.34.0",
+]
+
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.1.0",
+    "ruff>=0.9.5",
+]
+
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "I",   # isort
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "RUF", # ruff-specific rules
+    "SIM", # flake8-simplify
+    "TID", # flake8-tidy-imports
+    "ERA", # eradicate
+]
+# Ignore explanations:
+# E501: Line too long (handled by formatter)
+# B008: Function calls in argument defaults for FastAPI dependencies (this is a FastAPI pattern)
+# RUF012: Mutable class attributes in Pydantic models (this is a Pydantic pattern)
+ignore = [
+    "E501",  # line too long (handled by formatter)
+    "B008",  # do not perform function call in argument defaults (needed for FastAPI dependencies)
+    "RUF012",  # mutable class attributes should be annotated with typing.ClassVar (not needed for Pydantic)
+]
+
+[tool.ruff.lint.isort]
+force-single-line = false
+lines-between-types = 1
+known-first-party = ["configs", "handlers", "validators"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
