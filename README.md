@@ -43,20 +43,20 @@ cd ch_warehouse_manual_scaling
 2. Create and activate a Python virtual environment:
 
 ```bash
-uv venv .venv
+uv venv
 source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
 ```
 
 3. Install dependencies using UV:
 
 ```bash
-uv pip install -e .
+uv sync
 ```
 
 4. Install development dependencies (optional):
 
 ```bash
-uv pip install -e ".[dev]"
+uv sync --only-dev
 ```
 
 ## Configuration
@@ -107,7 +107,13 @@ http://localhost:8000/clickhouse/manual/scaling/docs
 
 The project uses several tools to maintain code quality:
 
-1. Install pre-commit hooks:
+1. Install pre-commit:
+
+```bash
+uv add --dev pre-commit
+```
+
+2. Install pre-commit hooks:
 
 ```bash
 pre-commit install
