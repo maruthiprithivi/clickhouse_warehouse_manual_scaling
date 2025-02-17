@@ -98,7 +98,7 @@ http://localhost:8000/clickhouse/manual/scaling/docs
 
 ### Code Quality
 
-The project uses several tools to maintain code quality:
+The project uses several tools to maintain code quality, specifically for code formatting and checking:
 
 1. Install pre-commit:
 
@@ -112,11 +112,13 @@ uv add --dev pre-commit
 pre-commit install
 ```
 
-2. Run code formatting and linting:
+3. Run code formatting and linting:
 
 ```bash
 make pre-commit
 ```
+
+The pre-commit hooks include tools such as `ruff` and `ruff-format` for code formatting and checking.
 
 ## API Endpoints
 
